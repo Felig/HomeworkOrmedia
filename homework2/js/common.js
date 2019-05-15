@@ -97,27 +97,26 @@ function TransportWorker() {
 }
 
 
-    let divNotetype = document.querySelector('.divNotetype');
-    let newCollumn = document.querySelector('.newCollumn');
-    let notetype = document.querySelector('.notetype');
-    divNotetype.addEventListener('click', function (e) {
-        let target = e.target;
-        if (target.classList.contains('notetype')) {
-            if (target.value == 'Рабочий') {
-                newCollumn.innerHTML = '';
-            } 
-            else if (target.value == 'Рабочий транспортного предприятия') {
-                newCollumn.innerHTML = '';
-                newCollumn.innerHTML = transportWorkerInput(newCollumn).innerHTML;
-            }
-            else if (target.value == 'Рабочий индустриального предприятия') {
-                newCollumn.innerHTML = '';
-                newCollumn.innerHTML = factoryWorkerInput(newCollumn).innerHTML;
-            }
+let divNotetype = document.querySelector('.divNotetype');
+let newCollumn = document.querySelector('.newCollumn');
+let notetype = document.querySelector('.notetype');
+divNotetype.addEventListener('click', function (e) {
+    let target = e.target;
+    if (target.classList.contains('notetype')) {
+        if (target.value == 'Рабочий') {
+            newCollumn.innerHTML = '';
+        } 
+        else if (target.value == 'Рабочий транспортного предприятия') {
+            newCollumn.innerHTML = '';
+            newCollumn.innerHTML = transportWorkerInput(newCollumn).innerHTML;
         }
-    })
+        else if (target.value == 'Рабочий индустриального предприятия') {
+            newCollumn.innerHTML = '';
+            newCollumn.innerHTML = factoryWorkerInput(newCollumn).innerHTML;
+        }
+    }
+})
     
-
 
 
 function transportWorkerInput(grid) {
@@ -182,7 +181,7 @@ function factoryWorkerInput(grid) {
         return grid;
 }
 
-
+var i = 0;
 function submitForm(){
 
     if (notetype.value == 'Рабочий') {
@@ -195,40 +194,51 @@ function submitForm(){
         Worker1.setSpecialty(document.getElementById("specialty").value);
         Worker1.setExperience(document.getElementById("experience").value);
 
-     
+        i++;
+        
         var gr2 = document.getElementById('gr2');
 
         var div = document.createElement('div');
         div.innerHTML = Worker1.getName();
         gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
 
         var div = document.createElement('div');
         div.innerHTML = Worker1.getLastname();
         gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
 
         var div = document.createElement('div');
         div.innerHTML = Worker1.getFathername();
         gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
 
         var div = document.createElement('div');
         div.innerHTML = Worker1.getAge();
         gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
 
         var div = document.createElement('div');
         div.innerHTML = Worker1.getSpecialty();
         gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
 
         var div = document.createElement('div');
         div.innerHTML = Worker1.getExperience();
         gr2.appendChild(div);
-
-        var div = document.createElement('div');
-        div.innerHTML = '<button>Удалить</button>';
-        gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
 
         var div = document.createElement('div');
         div.innerHTML = 'рабочий';
         gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
+
+        var div = document.createElement('div');
+        div.innerHTML = '<button onclick="delRow(this)">Удалить</button>';
+        gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
+        div.querySelector('button').setAttribute('id', 'row'+i);
+        div.querySelector('button').setAttribute('class', 'greenbutton');
     }
 
     else if (notetype.value == 'Рабочий транспортного предприятия') {
@@ -244,40 +254,51 @@ function submitForm(){
         Worker1.setDriverLicense(document.getElementById("driverLicense").value);
         Worker1.setTransportModel(document.getElementById("transportModel").value);
 
-     
+        i++;
+
         var gr2 = document.getElementById('gr2');
 
         var div = document.createElement('div');
         div.innerHTML = Worker1.getName();
         gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
 
         var div = document.createElement('div');
         div.innerHTML = Worker1.getLastname();
         gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
 
         var div = document.createElement('div');
         div.innerHTML = Worker1.getFathername();
         gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
 
         var div = document.createElement('div');
         div.innerHTML = Worker1.getAge();
         gr2.appendChild(div);
+        div.setAttribute('class', 'rr rr row'+i);
 
         var div = document.createElement('div');
         div.innerHTML = Worker1.getSpecialty();
         gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
 
         var div = document.createElement('div');
         div.innerHTML = Worker1.getExperience();
         gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
 
         var div = document.createElement('div');
-        div.innerHTML = '<button>Удалить</button>';
+        div.innerHTML = 'транспорт';   //Worker1.getDriverLirr rowcense();  
         gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
 
         var div = document.createElement('div');
-        div.innerHTML = 'транспорт';   //Worker1.getDriverLicense();  
+        div.innerHTML = '<button onclick="delRow(this)">Удалить</button>';
         gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
+        div.querySelector('button').setAttribute('id', 'row'+i);
+        div.querySelector('button').setAttribute('class', 'greenbutton');
     }
 
     else if (notetype.value == 'Рабочий индустриального предприятия') {
@@ -292,38 +313,72 @@ function submitForm(){
         Worker1.setCategory(document.getElementById("category").value);
         Worker1.setMachine(document.getElementById("machine").value);
      
+        i++;
+
         var gr2 = document.getElementById('gr2');
 
         var div = document.createElement('div');
         div.innerHTML = Worker1.getName();
         gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
 
         var div = document.createElement('div');
         div.innerHTML = Worker1.getLastname();
         gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
 
         var div = document.createElement('div');
         div.innerHTML = Worker1.getFathername();
         gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
 
         var div = document.createElement('div');
         div.innerHTML = Worker1.getAge();
         gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
 
         var div = document.createElement('div');
         div.innerHTML = Worker1.getSpecialty();
         gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
 
         var div = document.createElement('div');
         div.innerHTML = Worker1.getExperience();
         gr2.appendChild(div);
-
-        var div = document.createElement('div');
-        div.innerHTML = '<button>Удалить</button>';
-        gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
 
         var div = document.createElement('div');
         div.innerHTML = 'завод';  //Worker1.getCategory();
         gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
+
+        var div = document.createElement('div');
+        div.innerHTML = '<button onclick="delRow(this)">Удалить</button>';
+        gr2.appendChild(div);
+        div.setAttribute('class', 'rr row'+i);
+        div.querySelector('button').setAttribute('id', 'row'+i);
+        div.querySelector('button').setAttribute('class', 'greenbutton');
+    }
+}
+
+
+
+
+function delRow(el){
+    let paras = document.getElementsByClassName(el.id);
+    while (paras[0]) {
+        paras[0].parentNode.removeChild(paras[0]);
+        }
+            //alert(el.id);
+    }
+
+
+
+function resetForm(){
+
+    inputs = document.querySelectorAll('input');
+    for (let i = 0; i < inputs.length; i++) {
+            inputs[i].value = '';
+     //       alert("vasia");
     }
 }

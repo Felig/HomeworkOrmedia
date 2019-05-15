@@ -1,31 +1,56 @@
 
 body {
+  margin-left: 90px;
+  margin-top: 45px;
   font-family: arial;
+  height: 100%;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 150px 300px;
-  grid-auto-rows: 50px;
+  grid-template-columns: 180px 300px;
+  grid-template-rows: 65px;
+  grid-auto-rows: 40px;
+  color: #2b995b;
+  font-weight: bold;
 }
+
+.grid1 {
+  display: grid;
+  grid-template-columns: 180px 300px;
+  grid-auto-rows: 40px;
+  color: #2b995b;
+  font-weight: bold;
+}
+
 
 .headtable {
   grid-column: 1 / 3;
-  padding-left: 50px;
-  font-size: 20px;
+  padding-left: 20px;
+  font-size: 25px;
 }
 
 .grid2 {
   display: grid;
-  grid-template-columns: 100px 100px 100px 100px 150px 100px 100px 100px;
+  grid-template-columns: 100px 120px 120px 100px 170px 100px 170px 120px;
+  grid-template-rows: 50px;
   grid-auto-rows: 40px;
 }
 
-.headtable2 {
-  font-size: 20px;
-  background: lightgray;
-  text-align: left;
+.rr {
+  text-align: center;
+  outline: 1px solid #000;
   padding-top: 10px;
+  background: white;
+}
+
+.headtable2 {
+  font-size: 18px;
+  background: #c3e4d5;
+  text-align: center;
+  padding-top: 17px;
+  color: #2b995b;
+  font-weight: bold;
 }
 
 .greenbutton {
@@ -40,7 +65,7 @@ text-align: center;
 font-family: Arial, Helvetica, sans-serif;
 font-size: 14px;
 padding: 8px 16px;
-margin: 20px auto;
+margin: -7px auto;
 text-decoration: none;
 text-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
 -webkit-transition: background-color 0.1s linear;
@@ -59,8 +84,12 @@ background-color: rgb( 75, 183, 141 );
 
 .buttons {
   text-align: left;
+  padding-bottom: 70px;
 }
 
 .buttons button {
+  margin-left: 20px;
+  margin-right: 40px;
+  margin-top: 20px;
   display: inline-block;
 }
