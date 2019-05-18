@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8" />
+	<title>Новый работник</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+	<div class="grid">
+		<div class="headtable">Новый работник</div>
+		
+		<div><label for="notetype">Тип записи</label></div>
+		<div class="divNotetype">
+			<select name="notetype" class="notetype">
+				<option value="Рабочий">Рабочий</option>
+				<option value="Рабочий транспортного предприятия">Рабочий транспортного предприятия</option>
+				<option value="Рабочий индустриального предприятия">Рабочий индустриального предприятия</option>
+			</select>
+		</div>
+		<div><label for="name">Имя</label></div>
+		<div><input type="text" required id="name"></div>
+		<div><label for="lastname">Фамилия</label></div>
+		<div><input type="text" required id="lastname"></div>
+		<div><label for="fathername">Отчество</label></div>
+		<div><input type="text" required id="fathername"></div>
+		<div><label for="age">Возраст</label></div>
+		<div><input type="number" size="2" name="age" id="age" ="age" min="1" max="120"></div>
+		<div><label for="specialty" >Специальность</label></div>
+		<div>
+			<select name="specialty" id="specialty">
+				<option value=""></option>
+				<option value="Слесарь">Слесарь</option>
+				<option value="Фрезеровщик">Фрезеровщик</option>
+				<option value="Токарь">Токарь</option>
+				<option value="Водитель">Водитель</option>
+			</select>
+		</div>
+		<div><label for="experience">Стаж</label></div>
+		<div><input type="number" size="2" name="experience" id="experience" min="0" max="100"></div>
+		<div><label for="children">Наличие детей</label></div>
+		<div><input  type="checkbox"  name="children"  value="значение"></div>
+
+	</div>
+	<div class="grid1 newCollumn">
+
+
+	</div>
+	<div class="buttons">
+		<button type="submit" class="greenbutton" name="savebutton" onclick="submitForm()">Сохранить</button>
+		<button type="submit" class="greenbutton resetBtn" onclick="resetForm()">Очистить</button>
+	</div>
+
+	<div class="grid2" id="gr2">
+		<div class="headtable2">Имя</div>
+		<div class="headtable2">Фамилия</div>
+		<div class="headtable2">Отчество</div>
+		<div class="headtable2">Возраст</div>
+		<div class="headtable2">Специальность</div>
+		<div class="headtable2">Стаж</div>
+		<div class="headtable2">Тип записи</div>
+		<div class="headtable2">--</div>
+	</div>
+
+	<script src="js/common.js"></script>
+</body>
+</html>
